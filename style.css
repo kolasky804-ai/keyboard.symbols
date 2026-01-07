@@ -1,3 +1,4 @@
+
 /* ===== BODY ===== */
 body {
   margin: 0;
@@ -34,23 +35,35 @@ header p {
 
 /* ===== EACH SYMBOL ===== */
 .symbols span {
-  font-size: 2.5rem;
-  padding: 12px 16px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  font-size: 2.2rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
   cursor: pointer;
-  transition: all 0.4s ease;
-  box-shadow: 0 0 5px rgba(255,255,255,0.1);
+  transition: all 0.35s ease;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.15);
   user-select: none;
 }
 
-/* Hover effects */
+/* ===== HOVER EFFECTS ===== */
 .symbols span:hover {
   background: linear-gradient(135deg, #ffd700, #ffea00);
   color: #1a1a1a;
   transform: scale(1.6) rotate(-5deg);
   box-shadow: 0 0 20px #ffd700, 0 0 40px #ffea00;
   text-shadow: 0 0 10px #ffd700;
+  animation: glow 1s infinite alternate;
+}
+
+/* ===== ANIMATION SUBTLE GLOW ===== */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #ffd700; }
+  50% { text-shadow: 0 0 15px #ffea00; }
+  100% { text-shadow: 0 0 5px #ffd700; }
 }
 
 /* ===== NAME GENERATOR ===== */
@@ -104,28 +117,4 @@ footer {
   margin-top: 40px;
   font-size: 14px;
   color: #aaa;
-}
-
-/* ===== ANIMATION SUBTLE GLOW ===== */
-@keyframes glow {
-  0% { text-shadow: 0 0 5px #ffd700; }
-  50% { text-shadow: 0 0 15px #ffea00; }
-  100% { text-shadow: 0 0 5px #ffd700; }
-}
-
-.symbols span:hover {
-  animation: glow 1s infinite alternate;
   }
-.symbols span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  font-size: 2.2rem;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.06);
-  cursor: pointer;
-  transition: all .35s ease;
-  box-shadow: 0 0 8px rgba(255,215,0,0.15);
-}
